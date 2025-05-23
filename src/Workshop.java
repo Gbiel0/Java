@@ -1,9 +1,26 @@
+package src;
+
 import javax.swing.JOptionPane;
 
 public class Workshop {
     public static void main(String[] args) {
-        Car opala = new Car("Golf", 1981, "250-S", 4882.22);
-        opala.displayInfo();
+        Car golf = new Car("Golf", 1981, "250-S", 4882.22);
+        Car beetle = new Car("Beetle", 1978, "1600", 3882.25);
+        Car nova = new Car("Nova", 1982, "151-S", 2743.24);
+
+        String inputModel = JOptionPane.showInputDialog("Type a car model: ");
+
+        if(inputModel != null) {
+            if(inputModel.equalsIgnoreCase(golf.getModel())) {
+                golf.displayInfo();
+            } else if(inputModel.equalsIgnoreCase(beetle.getModel())) {
+                beetle.displayInfo();
+            } else if(inputModel.equalsIgnoreCase(nova.getModel())) {
+                nova.displayInfo();
+            } else {
+                JOptionPane.showMessageDialog(null, "This car is not available.");
+            }
+        }
     }
 }
 
@@ -24,5 +41,9 @@ class Car {
                                                             "\nYear: " + year +
                                                             "\nEngine: " + engine +
                                                             "\nPrice: $ " + price);
+    }
+
+    public String getModel() {
+        return model;
     }
 }
