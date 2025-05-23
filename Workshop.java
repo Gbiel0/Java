@@ -2,8 +2,8 @@ import javax.swing.JOptionPane;
 
 public class Workshop {
     public static void main(String[] args) {
-        Car beetle = new Car("Beetle", 1978, "1600", 5776.48);
-        beetle.displayInfo();
+        Car opala = new Car("Golf", 1981, "250-S", 4882.22);
+        opala.displayInfo();
     }
 }
 
